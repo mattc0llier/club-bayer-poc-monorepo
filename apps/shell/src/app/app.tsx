@@ -10,9 +10,10 @@ export function App() {
   return (
     <React.Suspense fallback={null}>
       <div>
-        <Navbar /> {/* Include Navbar at the top */}        
+        <Navbar /> {/* Include Navbar at the top */}
         <Routes>
           <Route path="/" element={<NxWelcome title="shell" />} />
+          
           <Route path="/remote2" element={<Remote2 />} />
           <Route path="/remote1" element={<Remote1 />} />
         </Routes>

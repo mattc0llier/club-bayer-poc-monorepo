@@ -4,8 +4,9 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve shell",
-    "build": "nx build shell",
-    "test": "nx test shell"
+    "build": "nx build shell --prod",
+    "test": "nx test shell",
+    "vercel-build": "nx build shell --prod"
   },
   "private": true,
   "dependencies": {
@@ -27,11 +28,17 @@
     "@nx/js": "20.1.0",
     "@nx/playwright": "20.1.0",
     "@nx/react": "20.1.0",
+    "@nx/rspack": "20.1.0",
     "@nx/web": "20.1.0",
     "@nx/webpack": "20.1.0",
     "@nx/workspace": "20.0.13",
     "@playwright/test": "^1.36.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
+    "@rspack/cli": "1.0.5",
+    "@rspack/core": "1.0.5",
+    "@rspack/dev-server": "1.0.5",
+    "@rspack/plugin-minify": "^0.7.5",
+    "@rspack/plugin-react-refresh": "^1.0.0",
     "@svgr/webpack": "^8.0.1",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.3.12",
@@ -54,7 +61,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "nx": "20.0.13",
     "prettier": "^2.6.2",
-    "react-refresh": "^0.10.0",
+    "react-refresh": "~0.14.0",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
