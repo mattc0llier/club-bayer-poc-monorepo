@@ -2,7 +2,12 @@
   "name": "@club-bayer-poc-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "private": true,
   "dependencies": {
     "@module-federation/enhanced": "0.6.9",
