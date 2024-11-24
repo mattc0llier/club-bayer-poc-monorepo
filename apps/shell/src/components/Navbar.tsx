@@ -22,10 +22,10 @@ const Navbar: React.FC = () => {
             <Link to="/">Home</Link>
           </li>
           <li style={{ marginRight: '20px' }}>
-            <Link to="/remote1">Remote1</Link>
+            <Link to="/remote1">Login</Link>
           </li>
           <li style={{ marginRight: '20px' }}>
-            <Link to="/remote2">Remote2</Link>
+            <Link to="/remote2">News</Link>
           </li>
         </ul>
       </div>
