@@ -14,7 +14,10 @@ const config: ModuleFederationConfig = {
    * declare module 'my-external-remote';
    *
    */
-  remotes: ['remote1', 'remote2'],
+  remotes: [
+  ['remote1', 'remote1@https://club-bayer-poc-remote1.vercel.app/remoteEntry.js'],
+  ['remote2', 'remote2@https://club-bayer-poc-remote2.vercel.app/remoteEntry.js'],
+  ]
 };
 
 /**
