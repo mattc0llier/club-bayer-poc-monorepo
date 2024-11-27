@@ -1,6 +1,7 @@
 import { composePlugins, withNx, ModuleFederationConfig } from '@nx/webpack';
 import { withReact } from '@nx/react';
 import { withModuleFederation } from '@nx/react/module-federation';
+import { merge } from 'webpack-merge';
 
 import baseConfig from './module-federation.config';
 
@@ -17,5 +18,17 @@ const config: ModuleFederationConfig = {
 export default composePlugins(
   withNx(),
   withReact(),
-  withModuleFederation(config, { dts: false })
+  withModuleFederation(config, { dts: false }),
+  (config) => {
+    return merge(config, {
+      module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader', 'postcss-loader'],
+          },
+        ],
+      },
+    });
+  }
 );
