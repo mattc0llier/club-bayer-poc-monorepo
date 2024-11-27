@@ -17,7 +17,17 @@ const config: ModuleFederationConfig = {
   remotes: [
   ['remote1', 'remote1@https://club-bayer-poc-remote1.vercel.app/remoteEntry.js'],
   ['remote2', 'remote2@https://club-bayer-poc-remote2.vercel.app/remoteEntry.js'],
-  ]
+  ],
+  shared: (libraryName, sharedConfig) => {
+    if (['react', 'react-dom', 'styled-components'].includes(libraryName)) {
+      return {
+        singleton: true,
+        eager: true,
+        requiredVersion: sharedConfig.requiredVersion,
+      };
+    }
+    return false;
+  },
 };
 
 /**
