@@ -4,5 +4,7 @@
         "src": "/(.*)",
         "dest": "/dist/apps/shell/$1"
       }
-    ]
+    ],
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist/apps/shell/.next"
   }
